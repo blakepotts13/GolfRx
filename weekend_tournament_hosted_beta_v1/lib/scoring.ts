@@ -29,7 +29,13 @@ export function calculateIndividualSkins(scoresByHole: Record<number, { playerId
 }
 
 export function splitFrontBack(teamHoleScores: Array<number | null>) {
-  const front = teamHoleScores.slice(0, 9).reduce((sum, score) => sum + (score ?? 0), 0);
-  const back = teamHoleScores.slice(9, 18).reduce((sum, score) => sum + (score ?? 0), 0);
+  const front = teamHoleScores
+    .slice(0, 9)
+    .reduce<number>((sum, score) => sum + (score ?? 0), 0);
+
+  const back = teamHoleScores
+    .slice(9, 18)
+    .reduce<number>((sum, score) => sum + (score ?? 0), 0);
+
   return { front, back, total: front + back };
 }
