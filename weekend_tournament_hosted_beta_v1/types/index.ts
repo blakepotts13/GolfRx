@@ -3,7 +3,7 @@ export type AuditEntry = {
   action: string
   user: string
   timestamp: string
-}
+
 export type EventStatus = 'draft' | 'live' | 'finalized';
 export type Role = 'admin' | 'scorer' | 'public';
 
