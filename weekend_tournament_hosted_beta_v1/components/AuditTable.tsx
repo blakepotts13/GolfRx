@@ -1,4 +1,9 @@
-import { AuditEntry } from '@/types';
+type AuditEntry = {
+  id: string
+  action: string
+  user: string
+  timestamp: string
+}
 
 export default function AuditTable({ entries }: { entries: AuditEntry[] }) {
   return (
