@@ -1,0 +1,52 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-2: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22c55e;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+body { min-height: 100vh; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.panel, .card { background: var(--panel); border: 1px solid #374151; border-radius: 14px; padding: 16px; }
+.panel + .panel { margin-top: 16px; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+input, select, button, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #4b5563;
+  background: var(--panel-2);
+  color: var(--text);
+}
+button { cursor: pointer; font-weight: 600; }
+button.primary { background: var(--accent); color: #052e16; border-color: transparent; }
+button.secondary { background: #334155; }
+button.danger { background: var(--danger); border-color: transparent; }
+label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+h1, h2, h3 { margin: 0 0 12px; }
+p { color: var(--muted); line-height: 1.5; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; border-bottom: 1px solid #374151; text-align: left; white-space: nowrap; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #1e3a8a; color: #dbeafe; font-size: 12px; }
+.nav { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+.nav a { padding: 10px 14px; border: 1px solid #374151; border-radius: 999px; }
+.kpi { font-size: 28px; font-weight: 700; }
+.small, .muted { font-size: 12px; color: var(--muted); }
+.score-grid { display: grid; grid-template-columns: 1.5fr repeat(9, minmax(50px, 1fr)); gap: 8px; align-items: center; }
+.section-title { font-size: 18px; margin-bottom: 12px; }
+.code { font-family: monospace; }
+.row { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.stack { display: grid; gap: 8px; }
+@media (max-width: 720px) {
+  .container { padding: 16px; }
+  .score-grid { grid-template-columns: 1.2fr repeat(3, minmax(48px, 1fr)); overflow-x: auto; }
+}
